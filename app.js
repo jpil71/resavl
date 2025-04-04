@@ -1,6 +1,6 @@
 // Configuration organisation
 const organizationName = "VOTRE ORGANISATION";
-const adminPassword = "admin1234"; // Mot de passe admin
+const adminPassword = "admin123"; // Mot de passe admin
 
 // Variables globales
 let currentUser = null;
