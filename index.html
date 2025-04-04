@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation de Véhicules</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+</head>
+<body>
+    <!-- Écran de connexion -->
+    <div id="loginSection">
+        <h2>Connexion</h2>
+        <div class="form-group">
+            <label for="username">Nom d'utilisateur:</label>
+            <input type="text" id="username" placeholder="admin ou votre nom">
+        </div>
+        <button class="btn btn-primary" onclick="login()">Se connecter</button>
+    </div>
+
+    <!-- Application principale -->
+    <div id="appSection">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2>Réservation de Véhicules</h2>
+            <button class="btn btn-logout" onclick="logout()">Déconnexion</button>
+        </div>
+        <div id="calendar"></div>
+        
+        <!-- Modal de réservation -->
+        <div id="reservationModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h3>Nouvelle Réservation</h3>
+                <form id="reservationForm">
+                    <div class="form-group">
+                        <label>Véhicule:</label>
+                        <select id="voiture" required>
+                            <option value="">-- Sélectionnez --</option>
+                            <option value="VL01">VL01 - Peugeot 208</option>
+                            <option value="VL02">VL02 - Renault Clio</option>
+                            <option value="VL03">VL03 - Citroën C3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Date de début:</label>
+                        <input type="date" id="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date de fin:</label>
+                        <input type="date" id="endDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Votre nom:</label>
+                        <input type="text" id="userName" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/fr.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
